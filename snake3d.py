@@ -374,7 +374,9 @@ def draw_text(x, y, text, font_size=16, color=(255,255,255)):
     glDisable(GL_TEXTURE_2D)
     glDisable(GL_BLEND)
     glBindTexture(GL_TEXTURE_2D, 0)
-    glDeleteTextures(texture_id)
+    # glDeleteTextures(texture_id) # this line will give type error. just enclose it with int()
+    glDeleteTextures(int(texture_id))
+    
 
 def draw_controls():
     controls = [
