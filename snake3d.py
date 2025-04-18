@@ -374,7 +374,8 @@ def draw_text(x, y, text, font_size=16, color=(255,255,255)):
     glDisable(GL_TEXTURE_2D)
     glDisable(GL_BLEND)
     glBindTexture(GL_TEXTURE_2D, 0)
-    glDeleteTextures(texture_id)
+    # glDeleteTextures(texture_id) # this line gives type error. TypeError: No array-type handler for type <class 'numpy.uintc'> (value: np.uint32(2)) registered. 
+    glDeleteTextures(int(texture_id))
 
 def draw_controls():
     controls = [
